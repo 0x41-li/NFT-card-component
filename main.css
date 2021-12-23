@@ -17,6 +17,7 @@ html,
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all .4s;
 }
 
 body {
@@ -45,9 +46,33 @@ main {
   box-shadow: 0px 20px 16px hsl(217, 54%, 11%), 0px 20px 32px hsl(217, 54%, 11%);
 }
 
+.card__image {
+  position: relative;
+  cursor: pointer;
+}
+
 .card__image img {
   display: block;
   border-radius: 8px;
+  cursor: pointer;
+}
+
+.card__image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: url("./images/icon-view.svg") no-repeat center;
+  background-color: hsla(178, 100%, 50%, 0.5);
+  opacity: 0;
+  border-radius: 8px;
+
+}
+
+.card__image:hover::after {
+  opacity: 1;
 }
 
 .card__title {
@@ -57,6 +82,11 @@ main {
 .card__title h1 {
   font-size: 22px;
   font-weight: 600;
+  cursor: pointer;
+}
+
+.card__title h1:hover {
+  color: var(--secondary-color);
 }
 
 .card__desc {
@@ -112,6 +142,11 @@ main {
 
 .creator__info p span {
   color: white;
+  cursor: pointer;
+}
+
+.creator__info p span:hover {
+  color: var(--secondary-color);
 }
 
 .attribution {
